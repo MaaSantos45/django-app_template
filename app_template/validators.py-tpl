@@ -1,0 +1,22 @@
+from collections import defaultdict
+from django.core import exceptions
+import inspect
+
+
+class {{ camel_case_app_name }}FormValidator:
+    def __init__(self, data, errors=None, error_class=None):
+        self.data = data
+        self.errors = defaultdict(list) if errors is None else errors
+        self.error_class = exceptions.ValidationError if error_class is None else error_class
+
+        self.clean()
+
+    def clean(self):
+        members = inspect.getmembers(self.__class__, predicate=lambda x: inspect.ismethod(x) or inspect.isfunction(x))
+        for name, member in members:
+            if name.startswith('clean_'):
+                member(self)
+
+        if self.errors:
+            raise self.error_class(self.errors)
+			

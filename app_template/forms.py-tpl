@@ -1,0 +1,15 @@
+from django import forms
+from collections import defaultdict
+from {{ app_name }}.validators import {{ camel_case_app_name }}FormValidator
+
+
+class {{ camel_case_app_name }}Form(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._form_error = defaultdict(list)
+
+    def clean(self):
+        cleaned_data = super().clean()
+        {{ camel_case_app_name }}FormValidator(data=cleaned_data, errors=self._form_error)
+        return cleaned_data
+		

@@ -1,0 +1,10 @@
+from django.test import TestCase
+
+
+class Base{{ camel_case_app_name }}Test(TestCase):
+    def setUp(self):   
+        return super().setUp()
+
+    def tearDown(self):    
+        return super().tearDown()
+		

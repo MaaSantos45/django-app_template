@@ -1,0 +1,10 @@
+from django.urls import path, include
+from {{ app_name }}.views import site
+
+app_name = '{{ app_name }}'
+
+# Create your urls here.
+
+urlpatterns = [
+    
+]
