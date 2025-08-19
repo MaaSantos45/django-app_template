@@ -19,4 +19,4 @@ class {{ camel_case_app_name }}FormValidator:
 
         if self.errors:
             raise self.error_class(self.errors)
-			
+            

@@ -7,4 +7,4 @@ class Base{{ camel_case_app_name }}Test(TestCase):
 
     def tearDown(self):    
         return super().tearDown()
-		
+        

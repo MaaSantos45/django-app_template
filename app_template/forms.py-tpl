@@ -12,4 +12,4 @@ class {{ camel_case_app_name }}Form(forms.Form):
         cleaned_data = super().clean()
         {{ camel_case_app_name }}FormValidator(data=cleaned_data, errors=self._form_error)
         return cleaned_data
-		
+        

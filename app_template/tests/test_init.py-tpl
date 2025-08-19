@@ -3,7 +3,7 @@ from {{ app_name }}.tests import Base{{ camel_case_app_name }}Test
 # Create your tests here.
 
 
-class {{ camel_case_app_name }}Test(TestCase):
+class {{ camel_case_app_name }}Test(Base{{ camel_case_app_name }}Test):
     def setUp(self):   
         return super().setUp()
 
@@ -12,4 +12,4 @@ class {{ camel_case_app_name }}Test(TestCase):
 
     def test_the_test(self):    
         self.assertEqual(1, 1)
-		
+        
