@@ -7,5 +7,5 @@ This repository is to add a custom app template for manage.py startapp
 Just simply add the argument --template to manage.py
 
 ```
-(e.g) python manage.py startapp --template https://github.com/MaaSantos45/django-app_template/blob/main/app_template.zip <app_name>
+(e.g) python manage.py startapp --template https://github.com/MaaSantos45/django-app_template/raw/refs/heads/main/app_template.zip <app_name>
 ```
